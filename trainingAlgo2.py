@@ -26,9 +26,9 @@ def setup_graph(title='', x_label='', y_label='', fig_size=None):
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
 
-UDP_IP = "192.168.0.8" #"192.168.43.156" #0.14
+UDP_IP = "192.168.0.25" #"192.168.43.156" #0.14
 UDP_PORT = 5555
-CATEGORY = 0
+CATEGORY = 2
   #-1 => Testing, 0 => Still, 1 => Moving, 2 => Fall
 MODE = "TRAINING" #"TRAINING" # "TESTING"
 DECIMALS = 3
@@ -106,7 +106,7 @@ if MODE == "TRAINING":
           
     # Save in CSV.
     if(input("Include in DataSet? YES/NO: ") == "Y"):
-        with open("./acc_data4.csv", "a") as writeFile:
+        with open("./acc_data5.csv", "a") as writeFile:
              writer = csv.writer(writeFile)
              acelerometro[3].insert(0, CATEGORY)
              writer.writerow(acelerometro[3])
